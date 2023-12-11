@@ -1,0 +1,8 @@
+loguru
+pandas
+openpyxl
+pytorch
+torchvision
+pyyaml
+tensorboard
+tqdm

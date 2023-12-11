@@ -1,0 +1,43 @@
+experiment_name: "NaiveCNN"
+training_config:
+  lr: 1.
+  rho: 0.95
+  eps: 0.00000001
+  training_episode: 1000
+  grad_clip: 5
+  learning_rate_reduce_factor: .3
+  minimum_learning_rate: 0.00001
+  patience: 5
+  save_freq: 100
+training_data:
+  data_path: "./data/math_research.xlsx"
+  feature_columns:
+    - "台指近 加QQ"
+    - "加權 收盤價"
+    - "成交量"
+    - "期貨高 加QQ"
+    - "大盤高"
+    - "高價差修正"
+    - "台價差修正"
+  label_column: "HDIF"
+  window_width: 10
+  batch_size: 64
+  shuffle: True
+  num_workers: 6
+  prefetch_factor: 64
+validation_data:
+  data_path: "./data/math_research.xlsx"
+  feature_columns:
+    - "台指近 加QQ"
+    - "加權 收盤價"
+    - "成交量"
+    - "期貨高 加QQ"
+    - "大盤高"
+    - "高價差修正"
+    - "台價差修正"
+  label_column: "HDIF"
+  window_width: 10
+  batch_size: 64
+  shuffle: False
+  num_workers: 6
+  prefetch_factor: 64
